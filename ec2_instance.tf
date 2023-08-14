@@ -13,7 +13,7 @@ provider "aws"{
         secret_key = "pRPi8XEWNVdHYrU3rNyCuH5GUbp6fxtBojULlRFM"
 }
 
-resource "aws_instance" "My_ec2_instance"{
+resource "aws_instance" "My_ec2_instances"{
         ami = "ami-08c40ec9ead489470"
         instance_type = "t2.micro"
         tags = {
