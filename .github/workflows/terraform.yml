@@ -9,7 +9,7 @@ on:
         default: terraform_test'
         type: string
 jobs:
-  provision-ec2:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Terraform Apply
