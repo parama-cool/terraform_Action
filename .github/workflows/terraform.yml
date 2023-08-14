@@ -12,24 +12,8 @@ jobs:
   provision-ec2:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: AKIAZ4WS4SB6UHFDL6HW
-          aws-secret-access-key: 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'
-          aws-region: us-east-2
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v2
-        with:
-          terraform_wrapper: false
       - name: Terraform Apply
         id:   apply
-        env:
-          TF_VAR_ec2_name:  "${{ github.event.inputs.ec2-name }}"
         run: |
           cd tf-example/
           terraform init
