@@ -15,6 +15,7 @@ jobs:
       - name: Terraform Apply
         id:   apply
         run: |
+          cd terraform_Action/
           terraform init
           terraform validate
           terraform plan 
