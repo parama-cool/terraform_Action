@@ -21,7 +21,7 @@ jobs:
         with:
           aws-access-key-id: 'AKIAZ4WS4SB6UHFDL6HW'
           aws-secret-access-key: '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'
-          aws-region: us-east-2
+          aws-region: ap-south-1
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
         with:
