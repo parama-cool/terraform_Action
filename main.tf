@@ -23,11 +23,8 @@ resource "aws_instance" "My_ec2_instance"{
 module "s3_bucket" {
   source = "terraform-aws-modules/s3-bucket/aws"
 
-  bucket = "my-s3-bucket"
+  bucket = "s3bucket_7hhj9"
   acl    = "private"
-
-  control_object_ownership = true
-  object_ownership         = "ObjectWriter"
 
   versioning = {
     enabled = true
