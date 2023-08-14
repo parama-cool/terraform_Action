@@ -1,4 +1,4 @@
-name: Provision t3.micro EC2
+name: terraformtest
 
 on:
   workflow_dispatch:
