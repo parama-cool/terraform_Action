@@ -23,7 +23,7 @@ resource "aws_instance" "My_ec2_instance"{
 module "s3_bucket" {
   source = "terraform-aws-modules/s3-bucket/aws"
 
-  bucket = "s3bucket_7hhj9"
+  bucket = "s3bucket_awsssss"
   acl    = "private"
 
   versioning = {
