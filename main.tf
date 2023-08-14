@@ -10,8 +10,7 @@ data "aws_ami" "ubuntu" {
         name   = "virtualization-type"
         values = ["hvm"]
     }
-    
-    owners = ["099720109477"] # Canonical
+
 }
 
 provider "aws" {
@@ -21,7 +20,7 @@ provider "aws" {
 resource "aws_instance" "app_server" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t3.micro"
-  key_name      = "app-ssh-key"
+  key_name      = "terrakey.pem"
 
   tags = {
     Name = var.ec2_name
