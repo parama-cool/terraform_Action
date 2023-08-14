@@ -22,7 +22,7 @@ resource "aws_instance" "My_ec2_instance"{
 }
 resource "aws_s3_bucket" "bucket"{
 
-        bucket = "tf_bucket"
+        bucket = "tf_bucket75658867"
         acl = "private"
 
         versioning{
