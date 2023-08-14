@@ -20,7 +20,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "app_server" {
-  ami = ami-0da59f1af71ea4ad2
+  ami = "ami-0f5ee92e2d63afc18"
   instance_type = "t2.micro"
   key = "terraform_ac.pem"
 
