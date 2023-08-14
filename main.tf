@@ -1,31 +1,35 @@
-data "aws_ami" "ubuntu" {
-    most_recent = true
-
-    filter {
-        name   = "name"
-        values = ["ubuntu/images/hvm-ssd/*20.04-amd64-server-*"]
-    }
-
-    filter {
-        name   = "virtualization-type"
-        values = ["hvm"]
-    }
-
+terraform{
+        required_providers{
+        aws={
+        source = "hashicorp/aws"
+        version = "5.12.0"
+}
+}
+required_version = ">= 1.2.0"
+}
+provider "aws"{
+        region = "us-east-1"
+        access_key = "AKIAZ4WS4SB6UHFDL6HW"
+        secret_key = "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"
 }
 
-provider "aws" {
-    region  = "ap-south-1"
-    access_key = "AKIAZ4WS4SB6UHFDL6HW"
-    secret_key = "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"
+resource "aws_instance" "My_ec2_instance"{
+        ami = "ami-08c40ec9ead489470"
+        instance_type = "t2.micro"
+        tags = {
+                Name = "terraformtest_instance"
+        }
 }
+resource "aws_s3_bucket" "bucket"{
 
-resource "aws_instance" "app_server" {
-  ami = "ami-0f5ee92e2d63afc18"
-  instance_type = "t2.micro"
-  key_name      = "app-ssh-key"
+        bucket = "tf_bucket"
+        acl = "private"
 
+        versioning{
+                enabled = true
+        }
+        tags={
 
-  tags = {
-    Name = var.ec2_name
-  }
+                Name = "My-bucket"
+        }
 }
