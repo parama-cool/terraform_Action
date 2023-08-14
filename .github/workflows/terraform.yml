@@ -6,7 +6,7 @@ on:
       ec2-name:
         description: EC2 name
         required: true
-        default: 'App Server'
+        default: terraform_test'
         type: string
 jobs:
   provision-ec2:
